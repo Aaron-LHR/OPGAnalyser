@@ -5,7 +5,7 @@ lines = ["i+i*i*\r\n", "i+i\r\n", "i+\r\n", "ii\r\n"]
 
 with open(sys.argv[1], mode='r', encoding='utf-8') as file:
     lines = file.readlines()
-    print(lines)
+    # print(lines)
 
 operator = {'+': 0, '*': 1, '(': 2, ')': 3, 'i': 4, '#': 5}
 
@@ -48,7 +48,7 @@ matrix[operator['#']][operator['i']] = 2  # <
 
 for line in lines:
     stack = []
-    line = '#' + line[:-2] + '#'
+    line = '#' + line[:-1] + '#'
     i = 1
     stack.append('#')
     while i < len(line):
