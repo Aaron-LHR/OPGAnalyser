@@ -54,7 +54,7 @@ for line in lines:
     while i < len(line):
         ch = line[i]
         if ch not in operator.keys():
-            print("RE")
+            print("E")
             break
         j = len(stack) - 1
         while j >= 0:
@@ -95,7 +95,10 @@ for line in lines:
                     i = len(line)
                     break
                 elif matrix[operator[stack[j]]][operator[ch]] == 0:  # 不存在相邻关系
-                    print("E")
+                    if ch == '#':
+                        print("RE")
+                    else:
+                        print("E")
                     i = len(line)
                     break
             else:
