@@ -1,7 +1,7 @@
 import sys
 from collections import deque
 
-lines = ["i+i*i*\r\n", "i+i\r\n", "i+\r\n", "ii\r\n"]
+lines = ["i+(i*i+(i+i)*i*i)*i+z\n", "i+i+i+(i+i\n", "i*i*(i*i+i*i+i+(i+i+i+i*i*i*i)*i*(i+i+i*i+(i*(i+i)+i)*i)*i+i)*i*(i*i*i*i+i+(i*i)*i+i)+i+i*i*i*i*i+i+i+(i*i*i*i+i*i+i*i+(i+(i+i*i*(i+i*i*i)+i*i*i)*i*i*i*i*i+i*i)*i+i+i+i+i)+i*i+i+(i+i+i+(i+i*i+i*(i*(i*i*(i*i*i*i*i*(i+i)+i*i*i)*i+i+i+i+i+i)+i+i+i+(i*i+i)*i+i*i+i*i*i)*i*i*i*(i*i*i+i+i+(i*i+i*i*i*i*i+i+i*i*i*i)*i*i+i+i+i*(i+i*(i*i)*i*i+i*(i*i)*i)*i*i*(i+i*i+(i*i+i*(i+i)+i*(i*(i*(i*(i*i)+i)*i)*i)*i+i)*i*i+i)+i+i)+i+i+i*(i+i*i+i+i+i*(i*i+i+i*(i+(i*i)+i*i)*i)+i*i+i+(i*i+i*i)+i+i)*i+i+i*i*i)+i+i+i*i*(i*i+(i*i)+i+(i+i*i)+i*i*(i+i+(i+i+i+(i*i+i*(i*i+i)+i)+i+i)*i+(i*i)*i*(i+i)+i*i)+i+i+i+(i*(i+i+(i+i*i*i*(i+i)+i*i+i)+i+i*(i*(i*(i*i)+i*i+i*i+i)*i*i+i*i+i)+i+i*(i*i*i)+i+i)*i+i+i+i*i*(i+i+i+i+i+(i*i+i+i+i*i)*i+(i+i*i+(i*i)*i+i)*i)*i+i)+i)+i+i+i*i*i+i+i+i+(i*i*i+i+i+i+i+(i+i+i*i*i)+i)*i)+i*z\n"]
 
 with open(sys.argv[1], mode='r', encoding='utf-8') as file:
     lines = file.readlines()
@@ -53,6 +53,9 @@ for line in lines:
     stack.append('#')
     while i < len(line):
         ch = line[i]
+        if ch not in operator.keys():
+            print("RE")
+            break
         j = len(stack) - 1
         while j >= 0:
             if stack[j] != 'N':
