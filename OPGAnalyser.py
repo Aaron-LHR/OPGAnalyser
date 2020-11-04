@@ -1,10 +1,10 @@
 import sys
 from collections import deque
 
-# with open(sys.argv[1], mode='r', encoding='utf-8') as file:
-#     lines = file.readlines()
-
 lines = ["i\r\n", "i+i\r\n", "i+\r\n", "ii\r\n"]
+
+with open(sys.argv[1], mode='r', encoding='utf-8') as file:
+    lines = file.readlines()
 
 operator = {'+': 0, '*': 1, '(': 2, ')': 3, 'i': 4, '#': 5}
 
