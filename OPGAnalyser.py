@@ -1,7 +1,7 @@
 import sys
 from collections import deque
 
-lines = ["i\r\n", "i+i\r\n", "i+\r\n", "ii\r\n"]
+lines = ["i+i*i*\r\n", "i+i\r\n", "i+\r\n", "ii\r\n"]
 
 with open(sys.argv[1], mode='r', encoding='utf-8') as file:
     lines = file.readlines()
